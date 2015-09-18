@@ -1,4 +1,8 @@
 # -*- coding: UTF-8 -*-
+"""
+    Simple game where the user tries to guess a number.
+"""
+
 import random
 
 count = 0
@@ -28,10 +32,9 @@ def guessing():
     # input() is the same thing as eval(raw_input())
     # (eval() interprets a string as code) >>> x = 1 >>> eval('x + 1') >>> 2
     """
-
     global guessesTaken, count
     guessesTaken += 1
-    print count
+
     if count > 5:
         print "You cannot play this game because you are retarded"
         raise Exception("Idiot")
