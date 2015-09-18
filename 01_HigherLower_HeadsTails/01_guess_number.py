@@ -1,4 +1,8 @@
 # -*- coding: UTF-8 -*-
+"""
+    Simple game where the user tries to guess a number.
+"""
+
 import random
 
 count = 0
