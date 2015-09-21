@@ -2,7 +2,7 @@
 """
     Simple game where the user tries to guess each letter in a word.
 """
-import random, os
+import random
 
 guessesTaken = 0
 count = 0
@@ -59,6 +59,13 @@ def guessing():
         print "You won"
         return
 
+    """
+        filter(function, iterable)
+        Construct a list from those elements of iterable for which functions
+        return True.
+        equivalent to:
+            [item for item in iterable if function(item)
+    """
     remaining_lett = len(set(filter(lambda x: x.isalpha(), word)))
     # check if someone have no chance to win
     if remaining_lett > remaining:
