@@ -1,42 +1,72 @@
 # -*- coding: UTF-8 -*-
 """
-    xxx
+    Simple game where the user tries to guess each letter in a word.
 """
-import random
+import random, os
 
 guessesTaken = 0
 count = 0
-words = ["jebac siia", "kalkulator", "skurwysynya"]
+remaining = 10  # how many attempts can be taken
+words = ["jebac sii", "kalkulator", "skurwysyny"]
 
 i = random.randint(0, len(words) - 1)
 word = list(words[i])
+word_temp = word * 1
+guesses = []
+print [w.replace(w, '_') for w in word_temp]
 
 def guessing():
-    guess = raw_input("Choose the letter\n")
 
-    global guessesTaken, count
+    global guessesTaken, count, remaining
     guessesTaken += 1
 
+    guess = raw_input("Choose the letter.\n")
+    remaining -= 1
+    print "\n%d chances remaining..." % remaining
+
+    # checking if someone don't know what does it mean 'letter'
     if count > 5:
-        print "You cannot play this game because you are retarded"
+        print "You cannot play this game because you are retarded."
         raise Exception("Idiot")
-    print guess
+
     if guess.isalpha() == False:
         count += 1
         guessing()
     else:
         guess = str(guess)
-        print guess
+
+    # check if guess == letter
     if guess in word:
         print "Your guess is good."
-        word[:] = [value for value in word if value != guess]
-        print word
-    """
-        guessing()
-    elif guess > x:
-        print "Your guess is wrong."
-        guessing()
+        word[:] = [w.replace(guess, '_') for w in word]
+        # word[:] = [value for value in word if value != guess]
+        guesses.append(guess)
     else:
-        print "You guessed my number in %s guesses!" % str(guessesTaken)
-    """
+        print "Your guess is not good."
+
+    # printing you guesses
+    temp = []
+    for w in word_temp:
+        if w not in guesses:
+            temp.append('_')
+        else:
+            temp.append(w)
+    print temp
+
+    # checking if win
+    temp = [w for w in word if w.isalpha() is True]
+    if len(temp) < 1:
+        print "You won"
+        return
+
+    remaining_lett = len(set(filter(lambda x: x.isalpha(), word)))
+    # check if someone have no chance to win
+    if remaining_lett > remaining:
+        print "You loose. There is no possibility to win this game."
+        print "You have at least %d letters to guess and %d chances.\n" % (remaining_lett, remaining)
+        return
+
+    guessing()
+
+
 guessing()

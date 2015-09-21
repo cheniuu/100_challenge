@@ -52,6 +52,6 @@ def guessing():
         print "Your guess is too high."
         guessing()
     else:
-        print "You guessed my number in %s guesses!" % str(guessesTaken)
+        print "You guessed my number in %s guesses!" % str(guessesTaken + count)
 
 guessing()
