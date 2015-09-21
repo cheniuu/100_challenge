@@ -6,7 +6,7 @@
 import datetime
 
 def calculate_age(year, month, day):
-    # today = datetime.datetime.today()
+    # today = datetime.time.today()
     today = datetime.datetime.now()
     print today
     birth = datetime.datetime(year, month, day)
