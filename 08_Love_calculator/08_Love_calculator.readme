@@ -1,0 +1,66 @@
+As a kid my sister showed me this little love calculation to see how much chance you have of getting in a successful relationship with your crush. All you need is 2 names and a piece of paper.
+
+John
+Jane
+Then, you separate these names with the word Loves. You can either write this on one line or on new lines.
+
+John
+Loves
+Jane
+Then the calculating begins. You start off by counting how many times a character occurs from left to right and in case you use new lines also from top to bottom. Each character is counted once, So after counting the J of John you don't have to count them again when you start with Jane. The result of this example will be as follows:
+
+J: 2 ([J]ohn | [J]ane)
+O: 2 (J[o]hn | L[o]ves)
+H: 1 (Jo[h]n)
+N: 2 (Joh[n] | Ja[n]e)
+__
+L: 1 ([L]oves)
+O: skipped
+V: 1 (Lo[v]es)
+E: 2 (Lov[e]s | Jan[e])
+S: 1 (Love[s])
+__
+J: skipped
+A: 1 (J[a]ne)
+N: skipped
+E: skipped
+__
+Final result: 2 2 1 2 1 1 2 1 1
+The next step will be adding the digits working from the outside to the middle.
+
+2 2 1 2 1 1 2 1 1 (2+1=3)
+2 2 1 2 1 1 2 1 1 (2+1=3)
+2 2 1 2 1 1 2 1 1 (1+2=3)
+2 2 1 2 1 1 2 1 1 (2+1=3)
+2 2 1 2 1 1 2 1 1 (1)
+__
+Result: 3 3 3 3 1
+You will keep doing this until you have an integer left less or equal to 100.
+
+3 3 3 3 1
+4 6 3
+76%
+It can happen that the sum of 2 digits becomes ≥ 10, in this case the number will be split in 2 on the next row.
+Example:
+
+5 3 1 2 5 4 1 8
+13 (Will be used as 1 3)
+1 3 4 5 7
+8 8 4 (8+4=12 used as 1 2)
+1 2 8
+92%
+Requirements
+
+Your program should be able to accept any name with reasonable length (100 characters)
+[A..Z, a..z] characters are allowed.
+Case insensitive so A == a
+Free for you to decide
+
+How to handle special characters (Ö, è, etc.)
+Include last names yes or no, spaces will be ignored
+Any language is allowed.
+Winner will be determined by votes on the 28th 14th of February.
+
+Happy coding
+
+P.s. This is the first time I put something up here, if there is any way to improve it feel free to let me know =3
