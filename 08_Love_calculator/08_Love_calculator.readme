@@ -1,4 +1,5 @@
-As a kid my sister showed me this little love calculation to see how much chance you have of getting in a successful relationship with your crush. All you need is 2 names and a piece of paper.
+As a kid my sister showed me this little love calculation to see how much chance you have of getting in a successful 
+relationship with your crush. All you need is 2 names and a piece of paper.
 
 John
 Jane
@@ -7,7 +8,9 @@ Then, you separate these names with the word Loves. You can either write this on
 John
 Loves
 Jane
-Then the calculating begins. You start off by counting how many times a character occurs from left to right and in case you use new lines also from top to bottom. Each character is counted once, So after counting the J of John you don't have to count them again when you start with Jane. The result of this example will be as follows:
+Then the calculating begins. You start off by counting how many times a character occurs from left to right and in case 
+you use new lines also from top to bottom. Each character is counted once, So after counting the J of John you don't have to 
+count them again when you start with Jane. The result of this example will be as follows:
 
 J: 2 ([J]ohn | [J]ane)
 O: 2 (J[o]hn | L[o]ves)
