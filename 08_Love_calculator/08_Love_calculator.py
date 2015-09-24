@@ -8,12 +8,10 @@ def love_calc():
     pass
     name = raw_input("Please write your name.")
     name_l = raw_input("Please write name of your love one.")
-    sum = (name + "loves" + name_l).lower()
+    letters = list((name + "loves" + name_l).lower())
     scores = []
 
-    letters = list(sum)
-    # print letters
-
+    # count points for each letter
     for i in [name, 'loves', name_l]:
         for j in i.lower():
             # print j
@@ -21,7 +19,7 @@ def love_calc():
                 scores.append(letters.count(j))
                 letters[:] = [l for l in letters if l != j]
 
-    # print scores
+    # sum points according to readme
     state = True
     while state:
         temp = []
